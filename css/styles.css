@@ -4,7 +4,12 @@
 	}
 
 	body {
-		background-color: #454545;
+	}
+
+	.wrapper {
+		margin: 0 auto;
+		max-width: 2400px;
+		min-width: 320px;
 	}
 
 														/*  HEADER  */
@@ -32,7 +37,32 @@
 	    url(../fonts/LeagueGothic-Regular.otf);
 	}
 
+	@font-face {
+		font-family: OpenSans-Light;
+		src: local('OpenSans-Light'),
+	    url(../fonts/OpenSans-Light.ttf);
+	}
+
+	@font-face {
+		font-family: OpenSans-ExtraBold;
+		src: local('OpenSans-ExtraBold'),
+	    url(../fonts/OpenSans-ExtraBold.ttf);
+	}
+	
+	@font-face {
+		font-family: OpenSans-Italic;
+		src: local('OpenSans-Italic'),
+	    url(../fonts/OpenSans-Italic.ttf);
+	}
+
+	
+
 	.pingbuller_logo {
+		display: block;
+		margin: auto;
+	}
+
+	.pingbuller_logo img {
 		display: block;
 		margin: auto;
 	}
@@ -109,7 +139,6 @@
 	.menu__item:hover {
 		height: 40px;
 		border-bottom: 2px solid #edbfff;
-		background-color: rgba(36, 28, 42, .9);
 	}
 
 	.menu__item_last {
@@ -140,9 +169,18 @@
 		font-family: LeagueGothic-Regular, sans-serif;
 		font-size: 20px;
 		color: #fff;
+		height: 36px;
 		line-height: 34px;
 		text-shadow: 1px 2px 1px #454545;
 		text-decoration: none;
+		-webkit-transition: 200ms;
+		-o-transition: 200ms;
+		transition: 200ms;
+		border-bottom: 0px solid #edbfff;
+	}
+
+	.header__item:hover {
+		border-bottom: 3px solid #edbfff;		
 	}
 
 
@@ -178,9 +216,9 @@
 		padding: 4px 20px 0 45px;
 		width: 254px;
 		height: 100px;
-		font-family: 'Open Sans', sans-serif;
+		font-family: OpenSans-Light, sans-serif;
 		color: #fff;
-		font-size: 14px;
+		font-size: 16px;
 		line-height: 24px;
 		overflow: hidden;
 	}
@@ -238,13 +276,7 @@
 		text-shadow: 0 0 10px white;
 	}
 
-	.blurb__icon_first,
-	.blurb__icon_second,
-	.blurb__icon_third {
-		display: none;
-	}
-
-	.blurb__wrench {
+	.blurb__icon {
 		padding: 3px 0 0 10px;
 		width: 54px;
 		color: white;
@@ -269,7 +301,7 @@
 		height: 74px;													
 		overflow: hidden;
 		font-size: 16px;
-		font-family: 'Open Sans', sans-serif;
+		font-family: OpenSans-Light, sans-serif;
 		line-height: 24px;
 		text-shadow: 1px 1px 0px #0f1518;
 	}
@@ -320,6 +352,15 @@
 		font-family: LeagueGothic-Regular, sans-serif;
 		font-size: 24px;
 		color: #454545;
+		text-decoration: none;
+	}
+
+	.testimonials__name_first_line:hover {
+		text-decoration: underline;
+	}
+
+	.testimonials__name_first_line:hover .testimonials__name_second_line {
+		text-decoration: underline;
 	}
 
 	.testimonials__name_second_line {
@@ -334,7 +375,8 @@
 	.testimonials__text {
 		margin-top: 2px;
 		margin-left: 4px;
-		font-family: 'Open Sans', sans-serif;
+		font-family: OpenSans-Light, sans-serif;
+		color: #454545;
 		font-size: 16px;
 		line-height: 24px;
 	}
@@ -355,14 +397,20 @@
 		text-shadow: 1px 1px 0px white;
 	}
 
-	.blog__post_first {
-		margin-top: 13px;
+	.blog__posts {
+		display: block;
+		margin-top: 20px;
 		position: relative;
 		padding-left: 65px;
 		width: 213px;
+		text-decoration: none;
 	}
 
-	.blog__post_second {
+	.blog__posts:hover .blog__post {
+		text-decoration: underline;
+	}
+
+/*	.blog__post_second {
 		margin-top: 17px;
 		position: relative;
 		padding-left: 65px;
@@ -374,7 +422,7 @@
 		position: relative;
 		padding-left: 65px;
 		width: 213px;
-	}
+	}*/
 
 	.blog__photo {
 		position: absolute;
@@ -385,25 +433,26 @@
 	.blog__post {
 		height: 24px;											
 		overflow: hidden;										
-		font-family: 'Open Sans', sans-serif;
+		font-family: OpenSans-ExtraBold, sans-serif;
 		font-size: 16px;
 		line-height: 24px;
-		font-weight: 700;
 		color: #454545;
-		text-shadow: 1px 1px 0px white;
+		text-shadow: 1px 1px 0px #fff;
+
 	}
 
 	.blog__post_user {
 		height: 24px;
 		overflow: hidden;
-		font-family: 'Open Sans', sans-serif;
+		font-family: OpenSans-Light, sans-serif;
 		font-size: 15px;
 		line-height: 24px;
 		color: #454545;
-		text-shadow: 1px 1px 0px white;
+		text-shadow: 1px 1px 0px #fff;
 	}
 
 	.blog__more {
+		display: block;
 		margin-top: 15px;
 		margin-right: 3px;
 		font-family: LeagueGothic-Regular, sans-serif;
@@ -412,6 +461,11 @@
 		line-height: 24px;
 		text-align: right;
 		text-shadow: 1px 1px 0px white;
+		text-decoration: none;
+	}
+
+	.blog__more:hover {
+		text-decoration: underline;
 	}
 
 
@@ -482,7 +536,40 @@
 	.news__block_first,
 	.news__block_second,
 	.news__block_third {
+		display: block;
 		margin-top: 53px;
+		text-decoration: none;
+	}
+
+	.news__block_first:hover .news__categories_first {
+		text-decoration: underline;
+	}
+
+	.news__block_second:hover .news__categories {
+		text-decoration: underline;
+	}
+
+	.news__block_third:hover .news__categories {
+		text-decoration: underline;
+	}
+
+	.news__categories_first {
+		margin-top: 35px;
+		font-family: LeagueGothic-Regular, sans-serif;
+		font-size: 48px;
+		color: #454545;
+		line-height: 34px;
+		text-shadow: 1px 1px 0px white;
+	}
+
+	.news__copyright {
+		margin-top: 15px;
+		font-family: OpenSans-Italic, sans-serif;
+		color: #454545;
+	}
+
+	.news__categories_first span {
+		color: #b9b9b9;
 	}
 
 	.news__categories {
@@ -493,11 +580,22 @@
 		text-shadow: 1px 1px 0px white;
 	}
 
+	.news__text_first {
+		padding-top: 9px;
+		height: 100px;
+    overflow: hidden;
+		font-family: OpenSans-Light, sans-serif;
+		font-size: 16px;
+		line-height: 24px;
+		color: #454545;
+		text-shadow: 1px 1px 0px white;
+	}
+
 	.news__text {
 		padding-top: 9px;
 		height: 100px;
-    	overflow: hidden;
-		font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+		font-family: OpenSans-Light, sans-serif;
 		font-size: 16px;
 		line-height: 24px;
 		color: #454545;
@@ -538,6 +636,13 @@
 		line-height: 34px;
 		text-shadow: 1px 2px 1px #454545;
 		text-decoration: none;
+		-webkit-transition: 200ms;
+		-o-transition: 200ms;
+		transition: 200ms;
+	}
+
+	.footer__item:hover {
+		border-bottom: 2px solid #edbfff;
 	}
 
 	.dezayner {
@@ -562,16 +667,13 @@
 
 
 
-
-
-
-
-
 @media screen and (min-device-width: 480px) and (max-device-width: 767px) {
 
 
 
-
+	.wrapper {
+	  min-width: 480px;
+	}
 																/**			HEADER		**/
 
 	.header__wrapper {
@@ -669,21 +771,11 @@
 		margin-left: 62px;												
 	}
 
-	.blog__post_first {
-		padding-left: 129px;								
-		width: 311px;											
-	}
-
-	.blog__post_second {
-		margin-top: 20px;									
-		padding-left: 129px;									
-		width: 311px;											
-	}
-
-	.blog__post_third {
-		margin-top: 19px;										
-		padding-left: 129px;									
-		width: 311px;										
+	.blog__posts {
+		margin-top: 20px;
+		position: relative;
+		padding-left: 130px;
+		width: 311px;
 	}
 
 	.blog__photo {
@@ -742,6 +834,8 @@
 		padding-bottom: 83px;
 	}
 
+
+
 	
 
 												/**       FOOTER         **/
@@ -754,7 +848,7 @@
 	}
 
 	.dezayner {
-		margin-top: 26px;
+		margin-top: 35px;
 	}
 
 
@@ -774,6 +868,9 @@
 @media screen and (min-device-width: 768px) and (max-device-width: 959px) {
 
 
+	.wrapper {
+	  min-width: 768px;
+	}
 
 										/*  HEADER  */
 
@@ -784,11 +881,13 @@
 	.header__wrapper {
 		padding-bottom: 50px;
 		width: 728px;
-
-		
 	}
 
 	.pingbuller_logo {
+		margin-left: 0;
+	}
+
+	.pingbuller_logo img {
 		margin-left: 0;
 	}
 
@@ -884,7 +983,7 @@
 		width: 214px;									
 	}
 
-	.blurb__wrench {
+	.blurb__icon {
 		padding: 0px 0 0 0px;								
 		width: 53px;									
 	}
@@ -953,18 +1052,8 @@
 		width: 329px;								
 	}
 
-	.blog__post_first {
-		width: 265px;					
-	}
-
-	.blog__post_second {
-		margin-top: 20px;				
-		width: 265px;						
-	}
-
-	.blog__post_third {
-		margin-top: 17px;					
-		width: 265px;						
+	.blog__posts {
+		width: 265px;
 	}
 
 	.blog__more {
@@ -1021,6 +1110,10 @@
 		width: 728px;						
 	}
 
+	.news__categories_first {
+		margin-top: 0px;
+	}
+
 	.news__block_first {
 		width: 199px;				
 	}
@@ -1033,6 +1126,10 @@
 	.news__block_third {
 		margin-left: 66px;
 		width: 198px;				
+	}
+
+	.news__text_first {
+		height: 122px;						
 	}
 
 	.news__text {
@@ -1053,7 +1150,7 @@
 	}
 
 	.dezayner {
-		margin-top: 26px;															
+		margin-top: 35px;															
 		text-align: right;								
 	}
 
@@ -1078,11 +1175,15 @@
 
 														/*  HEADER  */
 
+	.wrapper {
+	  min-width: 960px;
+	}
+
 	.header__wrapper {
 		display: flex;						
 		flex-wrap: wrap;							
-		width: 960px;								
-		padding: 39px 0 122px 0;						
+		width: 920px;								
+		padding: 39px 20px 122px 20px;						
 	}
 
 	.pingbuller_logo {
@@ -1125,7 +1226,8 @@
 
 	.slider__wrapper {
 		margin: auto;
-		width: 960px;
+		width: 920px;
+		padding: 0 20px;
 	}
 
 	.slider__name {
@@ -1136,7 +1238,7 @@
 	}
 
 	.slider__slogan {	
-		padding: 2px 0 0px 0px;									
+		padding: 5px 0 0px 0px;									
 		width: 960px;				
 		font-size: 36px;					
 		line-height: 28px;					
@@ -1146,13 +1248,9 @@
 		display: block;							
 		padding: 10px 0px 0 0px;					
 		width: 515px;								
-		height: 150px;							
-		font-family: 'Open Sans', sans-serif;
-		color: #fff;
-		font-size: 18px;
-		line-height: 24px;
-		overflow: hidden;
+		height: 150px;	
 	}
+
 
 																	/*  ASIDE   BLURB   */
 
@@ -1167,19 +1265,22 @@
 
 	.blurb__second {
 		margin-top: 22px;			
-		margin-left: 55px;					
+		margin-left: 35px;	
+		margin-right: 20px;			
 	}
 
 	.blurb__third {
 		margin-top: 22px;				
-		margin-left: 53px;					
+		margin-left: 33px;		
+		margin-right: 20px;				
 	}
 
-	.blurb__icon_first {
+/*	.blurb__icon_first {
 		margin: 16px 17px 0 11px;				
 		display: block;						
 		width: 36px;						
 		background: url(../images/sprite.png) no-repeat;		
+		background-position: 3px 0;
 	}
 
 	.blurb__icon_second {
@@ -1196,11 +1297,11 @@
 		width: 36px;						
 		background: url(../images/sprite.png) no-repeat;		
 		background-position: -67px 0;						
-	}
+	}*/
 
-	.blurb__wrench {
+/*	.blurb__wrench {
 		display: none;						
-	}
+	}*/
 
 	.blurb__block {
 		width: 220px;								
@@ -1279,18 +1380,8 @@
 		width: 450px;
 	}
 
-	.blog__post_first {		
-		width: 385px;						
-	}
-
-	.blog__post_second {
-		margin-top: 19px;						
-		width: 385px;					
-	}
-
-	.blog__post_third {
-		margin-top: 17px;						
-		width: 385px;					
+	.blog__posts {
+		width: 385px;
 	}
 
 	.blog__more {
@@ -1358,6 +1449,10 @@
 		width: 280px;							
 	}
 
+	.news__categories_first {
+		margin-top: 0px;
+	}
+
 	.news__block_second {
 		margin-left: 58px;					
 	}
@@ -1368,6 +1463,10 @@
 
 	.news__categories {
 		font-size: 30px;									
+	}
+
+	.news__text_first {
+		height: 122px;						
 	}
 
 	.news__text {
